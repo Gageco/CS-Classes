@@ -1,0 +1,22 @@
+TITLE:
+Name: Gage Coprivnicar
+Section: A
+Project Title: Theoretical Cryptotrader
+
+PROBLEM DESCRIPTION:
+This project is an attempt to replicate what a cryptocurrency trader would do. It does this by generating random numbers from 40 to 50 and it will buy a certain amount the cryptocurrency and hold it then attempts to sell it at a profit. It tries to make the most amount of money it can in a given amount of trades. It sells it at a profit by taking an average of all the buying prices and it stores this. The original intent of this was to be able to trade on the bitfinex platform to make money but after extensive research into cURL and using JSON in C++ I came to the conclusion that this is beyond my current scope of knowledge in the given time frame. So understanding that it also will log all the trades that it makes. It also shows a graph of the total worth of your USD and how much it has made you. At the end it shows the amount of money it made you.
+
+PROGRAM DOCUMENTATION:
+To use the program you will largely be prompted through as to what to do.
+First you ghave to put in the amount that you are going to be trading with, the recommended amount is $100-$300. Than you are prompted to choose between Bitcoin and Ethereum. Lastly you are going to choose how many times you want the program to trade, the recommended amount is 200-400 times. From there the program will automatically run. After it trades the number of times you have inputted it displays how much money you have made a closes.
+
+TESTS:
+1. Put in a not valid number for the choice between eth and btc
+2. Still works with negative number for how much you are trading with and a positive number for the number of trades
+3. Works for a negative number of trades and a positive number for how much you are trading with
+4. Works for a negative number for both number of trades and how much money you are trading with
+5. Works if you put in zeros for both number of trades and/or how much money you are making
+
+
+REFLECTIONS:
+This project taught me a lot. It also set a lot of the concepts in my head for use later on. The biggest thing for me was attempting to use SFML to create the little bars constantly across the screen and updating the size and position was difficult. The class idea was also a little hard to implement but because of the assignments that taught us about how to use classes this was significantly easier so that was nice.
