@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Toolkit;
+import java.awt.Font;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -110,6 +111,7 @@ public class TrafficAnimation extends JPanel
 		int squareY = height / 2 - squareSide / 2;
 
 
+
     //TURTLE MOBILE!
 		g.setColor(new Color(11, 107, 0));
     g.fillArc(xOffset, squareY, squareSide, squareSide, 0, 180);
@@ -141,6 +143,8 @@ public class TrafficAnimation extends JPanel
 
     g.setColor(new Color(rColor, bColor, gColor));
 
+    g.setFont(new Font("Serif", 10, (width * 3) / 40));
+
     g.drawString("IT'S THE TURTLE-MOBILE!!!", (int)((width * 3) / 40), (int)((height * 5) / 40));
 
 
@@ -167,18 +171,22 @@ public class TrafficAnimation extends JPanel
 
 
     //SECOND AVATAR
+
+    int squareSide2 = width / 5;
+    int squareX = width / 2 - squareSide2 / 2;
+
     g.setColor(Color.yellow);
-    g.fillOval((int)((squareY * 35) / 40), (int)((squareY * 73) / 40), (int)(squareSide / 3), (int)(squareSide / 3));
+    g.fillOval((int)(width - (squareY * 45) / 40), (int)((squareY * 73) / 40), (int)(squareSide / 3), (int)(squareSide / 3));
 
     g.setColor(Color.red);
-    g.fillOval((int)((squareY * 38) / 40), (int)((squareY * 76) / 40), (int)(squareSide / 20), (int)(squareSide / 20));
+    g.fillOval((int)(width - (squareY * 42) / 40), (int)((squareY * 76) / 40), (int)(squareSide / 20), (int)(squareSide / 20));
 
     g.setColor(Color.blue);
-    g.fillOval((int)((squareY * 36) / 40), (int)((squareY * 75) / 40), (int)(squareSide / 10), (int)(squareSide / 10));
+    g.fillOval((int)(width - (squareY * 44) / 40), (int)((squareY * 75) / 40), (int)(squareSide / 10), (int)(squareSide / 10));
 
-    g.fillOval((int)((squareY * 39) / 40), (int)((squareY * 75) / 40), (int)(squareSide / 10), (int)(squareSide / 10));
+    g.fillOval((int)(width - (squareY * 41) / 40), (int)((squareY * 75) / 40), (int)(squareSide / 10), (int)(squareSide / 10));
 
-    g.drawArc((int)((squareY * 37) / 40), (int)((squareY * 77) / 40), (int)(squareSide / 10), (int)(squareSide / 10), 180, 180);
+    g.drawArc((int)(width - (squareY * 43) / 40), (int)((squareY * 77) / 40), (int)(squareSide / 10), (int)(squareSide / 10), 180, 180);
 
 
 

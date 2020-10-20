@@ -1,0 +1,23 @@
+# Project #: TrafficAnimation
+
+* Author: Gage Coprivnicar
+* Class: CS121 Section 007
+* Semester: Fall 202
+
+## Overview
+
+This program is a small animation consisting of a turtle-car moving down a road, over a sidewalk. Near the sidewalk there are a few figures, and a cross walk indicator showing when it is safe to cross.
+
+## Compiling and Using
+
+To compile, execute the following command in the main project directory:
+```
+$ javac TrafficAnimation.java
+```
+
+Run the compiled class with the command:
+```
+$ java TrafficAnimation
+```
+
+The code will run itself from there, pulling up the animation window
