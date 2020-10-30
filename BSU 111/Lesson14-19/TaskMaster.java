@@ -23,7 +23,7 @@ public class TaskMaster {
 
 
 	//Task 2 Stuff
-Task task2 = new Task("Give Gunther a Bath", 10);
+Task task2 = new Task("Give Gunther a Bath", "NONE", 10);
 
 // System.out.println("Task 2\n" + task2.toString());
 
@@ -63,6 +63,8 @@ task3.setDescription("Keep the lawn green");
 task3.setCompleted(true);
 task1.setPriority(21);
 
+task1.setCategory("WORK");
+task2.setCategory("PERSONAL");
 
 ToDoList todo = new ToDoList("Main To Do List");
 todo.addTask(task1);

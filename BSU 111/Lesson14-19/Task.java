@@ -10,6 +10,12 @@ public class Task implements Comparable<Task> {
 	private int priority;
 	private boolean completed;
 
+	public enum Category {
+		PERSONAL, WORK, NONE
+	}
+
+	private Category category;
+
 
 	/**
 	 * Create a new Task object
@@ -17,24 +23,34 @@ public class Task implements Comparable<Task> {
 	 * @param priority - relative importance of Task
 	 * @param completed - if Task has been completed
 	 */
-	public Task(String description, int priority) {
+	public Task(String description, String category,int priority) {
+		this.category = Category.valueOf(category);
 		this.description = description;
 		this.priority = priority;
 		this.completed = false;
 	}
 
 	public Task(String description) {
+		this.category = Category.valueOf("NONE");;
+		this.description = description;
+		this.priority = 0;
+		this.completed = false;
+	}
+
+	public Task(String category, String description) {
+		this.category = Category.valueOf(category);;
 		this.description = description;
 		this.priority = 0;
 		this.completed = false;
 	}
 
 	// String of the task, with completed status
+@Override
 public String toString() {
 	if (completed) {
-		return "[x] " + description + ", " + priority;
+		return "[x] " + this.description + ", " + this.category  + ", " + this.priority;
 	} else {
-		return "[ ] " + description + ", " + priority;
+		return "[ ] " + this.description + ", " + this.category  + ", " + this.priority;
 		}
 	}
 
@@ -58,13 +74,10 @@ public String toString() {
 		return this.priority;
 	}
 
+
 	//Get/Set Completed
 	public boolean isCompleted() {
-		if (this.completed) {
-			return true;
-		} else {
-			return false;
-		}
+		return this.completed;
 	}
 
 	public void setCompleted(boolean complete) {
@@ -72,11 +85,21 @@ public String toString() {
 	}
 
 
+	//Get/Set category
+	public void setCategory(String task) {
+		this.category = Category.valueOf(task);
+	}
+
+	public String getCategory() {
+		return this.category.toString();
+	}
+
+
 	//Misc Public functions (Assignment 15 Below)
 
 	//check if description is equal to another
-	public boolean equals(String comparableTask) {
-		if (this.description.equalsIgnoreCase(comparableTask)) {
+	public boolean equals(Task comparableTask) {
+		if ((this.description.equalsIgnoreCase(comparableTask.getDescription())) && (this.category.equals(comparableTask.getCategory()))) {
 			return true;
 		} else {
 			return false;
