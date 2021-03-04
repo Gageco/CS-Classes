@@ -1,0 +1,34 @@
+# Project #: Reader Of Books
+
+* Author: Gage Coprivnicar
+* Class: CS121 Section #007
+* Semester: Fall 2020
+
+## Overview
+
+This program is a digital GUI interface of the Library of Books program written previously allowing the user to load different libraries and choose the book they want to read
+
+## Reflection
+
+This was very difficult for me as GUI's are not a strong suit of mine. I ended up working with several students to complete this assignment, each of us taking different approaches to one of several roadblocks and 
+sort out what needs to be done. I also utilized the tutoring sessions which were very useful to completing this. It was neat to be able to make a functioning application that I can imagine folks using, but my question 
+that remains is how to compile this program into a single installable that can be opened with the click of a desktop icon instead of in the eclipse workspace. Anyhow this assignment did give me an in depth understanding
+with Java GUI's because of the struggle of it all. 
+
+One thing I did to overcome the problems I encountered was to create a new class file that would allos the program to use the BookButton. This was not in the assignment parameters but it works and a tutored said that as long as it
+works I will likely still get a good grade, possibly some points written off, but I couldn't figure out how to rewrite it to work any other way after spending hours on it, by myself, with friends and with tutors
+
+## Compiling and Using
+
+To compile, execute the following command in the main project directory:
+```
+$ javac ReaderOfBooks.java
+```
+
+Run the compiled class with the command:
+```
+$ java ReaderOfBooks
+```
+
+From there you can put in the location of the library you want to load and choose the book you want to read!
+

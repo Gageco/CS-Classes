@@ -1,0 +1,38 @@
+# Project #: Library Of Books
+
+* Author: Gage Coprivnicar
+* Class: CS121 Section #007
+* Semester: Fall 2020
+
+## Overview
+
+This program allows for the storage and maintence of a digital library via command line.
+Given a book title, genre, author, and file location this program can store, the book, and read it back to you if you so desire
+
+## Reflection
+
+I decided to take a bottom up approach to this project, first building the necessary Classes and class functions,
+then finally creating the LibraryOfBooks.java file to interact with it. This worked very well for me as I generally
+like ensuring that the lower level functions work correctly prior to building the dependencies. There were some difficulties 
+for me in this project. One of these struggles was at one point whenever I went to print out the text in the file
+it printed out the file location, this was very odd and after banging my head against the wall for a while, I figured out
+I had "filename" instead of just "file" so of course it was giving me the file name. What a pain.
+
+Other then that this project was fairly straight forward, I like that it is practical in a sense and could build
+very easily to much larger projects, such as actually building a GUI interface for the library.
+
+## Compiling and Using
+
+To compile, execute the following command in the main project directory:
+```
+$ javac LibraryOfBooks.java
+```
+
+Run the compiled class with the command:
+```
+$ java LibraryOfBooks
+```
+
+From there the interface will guide you through how to use it, including where to add books, what information is needed
+and how to print the books so they can be read
+

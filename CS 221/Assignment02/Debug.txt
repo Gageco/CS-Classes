@@ -1,0 +1,67 @@
+First thing I'm looking at is emptySet_testIsEmpty
+- Added a debug dot on line 44 at the time of writing and saw that the items in the array were null so I checked for that
+	using an if statement and got that fixed
+	
+emptySet_addA_A_testSize
+- Added a debug dot  around line 40 at time of writing and found that the length was often including null values
+	which it shouldn't be so I wrote a for loop checking for null values and returning the total not
+	including the null values. This through off the toString so I going to work on that next
+	
+emptySet_addA_A_testToString 
+- Hardest one so far, had no idea what the toString was looking for so I kinda went off of the tester and saw what they were checking
+	 for and decided what to change based on that. I pretty much checked if the setArray had any null values and instead of using
+	 'rear' I used setArray.length
+	 
+emptySet_addA_A_testContainsA
+- Easiest one so far. I changed rear to setArray.length and added a check to see if the values passed into the setArray[i].equals(element)
+	wasn't being passed any null values
+	
+	
+Started over, I didn't really know what I was doing with the code and didn't really understand what it did. After spending a stupid amount of time going over the tester
+the ArraySet, and the SimpleSet I finally have an understanding of what I'm doing.
+
+First change I made after starting from the beginning is on line 60 I added rear++ because I couldn't find where rear was being adjusted. That went from 
+
+Total Tests Run: 51 of 111,  Passed: 32,  Failed: 19
+
+to
+
+Total Tests Run: 93 of 111,  Passed: 82,  Failed: 11
+
+which is a huge difference. Very happy about that. Next up I'm going to figure out what is happening with the .isEmpty as that seems to be a common problem across the tests
+
+Had to review the logic a few times because I couldn't visualize it very well but changed line 40 in .isEmpty to check if rear < 1 instead of checking if rear  > 0 because 
+that is backwards of what it should have actually been.
+
+Haven't used any helpful debug dots
+
+I'm at 
+Total Tests Run: 93 of 111,  Passed: 91,  Failed: 2
+
+The errors that are being thrown is testRemove catching ArrayIndexOutOfBoundsException so that is next
+
+So update on catching the error mentioned above. For some reason when rear == 2 the remove element wasn't working properly. To address this I hardcoded how I want to deal with
+the rear == 2 scenario. I am at
+
+Total Tests Run: 111 of 111,  Passed: 101,  Failed: 10
+
+Glad to see all the tests are run, still failing 10 but for one sitting I feel good about the project, especially considering it's due date is still two weeks out.
+
+The remaining 10 tests related to the testContains and it catches NullPointerException. I'll deal with that at a later date though.
+
+03.02.2021
+
+Took a break for a while and coming back at it progress is slow, I saw there were a bunch of null point exception errors being thrown so I added the following to a few places
+if (setArray[i] == null) {
+}
+
+and those seemed to take care of a a few problems in each of the for statements involving setArray.
+
+I am now at 107/111 and I think I'm going to call it good
+
+04.02.2021
+So I was working with a guy in class and we had gotten some hang ups on the same few tests, we both had fixed the rear++ issue, and he as a test moved it up a few lines from where it was into the if statement in the add function!
+I knew the setArray[i] == null stuff wasn't great so we removed all those as well as the rear == 2 hardcode and that got me to 111/111 so I'm good to go!
+
+I didn't end up using any debug dots in any useful way, and instead kinda threw solutions on the wall to see what worked and got it! If I had to do it again, I can understand how debug dots could help me get to the solution faster, 
+but also the logic was flawed in the program initially so looking at that would also work to figure it out. Or just rewrite it all.

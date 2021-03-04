@@ -1,0 +1,39 @@
+# Project #: JukeboxHero
+
+* Author: Gage Coprivnicar
+* Class: CS121 Section #007
+* Semester: Fall 2020
+
+## Overview
+
+This program allows one to have analyse, search, and generally maintain a music library exported in a csv format. 
+By opening the csv file you can search for a song with specific words or letters, see how many different artists there are with different 
+albums and so on.
+
+## Reflection
+
+This was a fun project that harkened me back to the days of the iPod, when people had static playlists and you could use the click
+wheel to search through your music. I used the delimiters this time and while they gave me some trouble when getting to
+the last part of the line, I figured out a work around for that. 
+
+The other functions weren't to difficult in 
+execution, but they did require some thought. Tying all the pieces together like this is very fun and has led to me thinking
+what other practical projects I could do. I could see creating a GUI for this interface, or creating a CSV file from
+an actual folder of songs I have, and so on.
+
+
+## Compiling and Using
+
+To compile, execute the following command in the main project directory:
+```
+$ javac JukeboxHero.java
+```
+
+Run the compiled class with the command:
+```
+$ java JukeboxHero
+```
+
+From there the interface will guide you through how to use it, including where to add books, what information is needed
+and how to print the books so they can be read
+

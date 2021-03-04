@@ -1,0 +1,38 @@
+# Project #: TicTacToe
+
+* Author: Gage Coprivnicar
+* Class: CS121 Section #007
+* Semester: Fall 2020
+
+## Overview
+
+This program is a recreation of the game of TicTacToe where the player plays against the program and tries to win
+
+## Reflection
+
+This program was fun and wasn't to difficult, the logic itself was fun to write, and I'm very glad the TicTacToe GUI itself was written for us. When starting to write this program I started by looking at the 
+TicTacToe.java file and reading through that to see what each of the functions needed to do, input and out. I then started with the easier functions and using the tester to ensure that they were working properly
+using this method I managed to get like 82% on the tester, from there though I got stuck, I was passing most of the tests but there were only a few that weren't working, meaning there was no fundamental flaw
+in the logic, so I started working with a few other folks in my class and I realized I was missing the call to the gameOver() function in the choose option. 
+
+One thing of note is that I didn't want to use the enums that we were given as much as possible because I didn't want to check equals with the enums so I decided to craete my own 'board' using an array 
+of integers for rows and columns. I had 0 mean open, 1 mean X, and 2 mean O. Then I wrote a few translate functions to go from my integer array to the BoardChoice array.
+
+I also decided to brute force and write all the options for the winning scenerios instead of being cool and writing for loops to checks, but I did work with a gent who decided to write the for loop 
+checks and it was neat.
+
+Overall I enjoyed this final project as it was very logic based, and not making a painful GUI, and this class overall was fun and enjoyable, and I'm happy to be able to add Java to my repertoire. 
+
+## Compiling and Using
+
+To compile, execute the following command in the main project directory:
+```
+$ javac TicTacToeMain.java
+```
+
+Run the compiled class with the command:
+```
+$ java TicTacToeMain
+```
+
+From there the GUI will pop up and you can play the game!

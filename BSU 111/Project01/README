@@ -1,0 +1,27 @@
+# Project #1: Playlist
+
+* Author: Gage Coprivnicar
+* Class: CS121 Section #007
+* Semester: Fall 2020
+
+## Overview
+
+This program takes three different songs and their title, artist, album, and song length. It then finds the average song length, and the song length that is closest to four minutes. Lastly it prints out the songs, sorted by length, shortest to longest.
+
+## Compiling and Using
+
+To compile, execute the following command in the main project directory:
+```
+$ javac Playlist.java
+```
+
+Run the compiled class with the command:
+```
+$ java Playlist
+```
+
+From there the user will be prompted to put in each song, the title, artist, album, and the length in the format (mm:ss)
+
+## Sources used
+
+I was looking up how to get the middle value between three values, found a good example at https://www.geeksforgeeks.org/middle-of-three-using-minimum-comparisons/

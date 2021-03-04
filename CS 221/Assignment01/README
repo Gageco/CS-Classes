@@ -1,0 +1,76 @@
+****************
+* Assignment 01
+* Class CS221
+* Date 1/13/2021
+* Gage Coprivnicar
+**************** 
+
+OVERVIEW:
+
+This program analyzes a text document containing a grid of a given size,
+determines the average of the adjacent values for a given grid location, 
+then determines if there are any outliers, returning a boolean grid with outliers.
+
+
+INCLUDED FILES:
+
+README - this file
+GridMonitor.java - the analysis class for the grid
+GridMonitorTest.java - the testing program to ensure GridMonitor.java functions correctly
+GridMonitorInterface.java - defining the functions and describing their use
+
+
+COMPILING AND RUNNING:
+
+To compile GridMonitorTest.java
+ $ javac GridMonitorTest.java
+
+ Run the compiled class file with the command:
+ $ java GridMonitorTest
+
+ Console output will give the results after the program finishes.
+
+
+PROGRAM DESIGN AND IMPORTANT CONCEPTS:
+
+The most critical concept in this program is how it checks checks adjacent grids, and provides
+them to the program when requested. After ensuring that the file has been read correctly
+and has been successfully been transferred to a 2D double array, the program sets up a second 2D double array that acts as the 
+"mirror" that the assignment outlines. This second array, call it 'extendedArray', has two additional rows and columns which act
+as the mirrors. The constructor uses the original array, by place it in the center of the extendedArray and flipping the outmost
+rows and columns.
+
+The extendedArray is then used to calculate the adjacent values as it has all the proper values outlined where expected.
+
+I chose this method as I was able to more easily conceptualize how to implement it in code, then I was any alternative, though I 
+considered it throughly.
+
+Another important understanding when working with this program is the process for calculating the 
+different grids ultimately used to check and see if any of the adjacent panels are out of the usual range. 
+This is done in such a way that when doing the next mathematical process, the grid is calculated again. This isn't the most 
+time efficient but it does save some space.
+
+The rest of the program is pretty standard and the logic is straight forward
+
+TESTING:
+
+Initial testing was done after writing the GridMonitor construct as I wanted to be sure all the logic there was solid before moving into 
+implementing it as described by the interface methods. This was done by creating the .toString function and ensure that what was 
+collected from the file was correct in both the array and the extendedArray. I created a main class that outputted the different grids
+ calculated through the program as it ran to progressed to ensure that all the outputs were expected.
+
+DISCUSSION:
+ 
+This project at first look didn't appear to difficult, basically doing math on a bunch of 2D arrays. The difficult part came when reading into
+the details that described the need for a 'mirror' on the borders of the array. I went back in forth between two different methods I could
+think of. The first method that came to mind was to write a function that when looking for adjacent values, would check if values were
+on the border of the array read from the file, then return those accordingly. 
+
+This idea seemed simple enough but the implementation would be a pain, requiring a lot of checks for borders, and more importantly corners.
+The second idea I came up with after some thought was the one I ended up implementing which is described above in "PROGRAM DESIGN AND IMPORTANT CONCEPTS"
+which in summary creates a larger grid that has all necessary adjacent values and can pull them without issue.
+
+After figuring that out the rest of the program was simple, and implementing the functions in the interface weren't difficult.
+ 
+ 
+
