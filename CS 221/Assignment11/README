@@ -1,0 +1,125 @@
+****************
+* Project 03 Circuit Tracer
+* CS 221-2
+* 21/04/2021
+* Gage Coprivnicar
+**************** 
+
+OVERVIEW:
+
+ The CircuitTracer program when given a file formatted correctly finds and displays the best solutions to get from point 1 to point 2.
+
+
+INCLUDED FILES:
+
+ List the files required for the project with a brief
+ explanation of why each is included.
+
+ e.g.
+ * CircuitBoard.java				- source file
+ * CircuitTracer.java				- source file
+ * CircuitTracerTester.java			- source file
+ * InvalidFileFormatException.java	- source file
+ * OccupiedPositionException.java	- source file
+ * Storage.java						- source file
+ * TraceState.java					- source file
+ * README - this file
+
+
+COMPILING AND RUNNING:
+
+ Give the command for compiling the program, the command
+ for running the program, and any usage instructions the
+ user needs.
+ 
+ These are command-line instructions for a system like onyx.
+ They have nothing to do with Eclipse or any other IDE. They
+ must be specific - assume the user has Java installed, but
+ has no idea how to compile or run a Java program from the
+ command-line.
+ 
+ e.g.
+ From the directory containing all source files, compile the
+ driver class (and all dependencies) with the command:
+ $ javac CircuitTracer.java
+
+ Run the compiled class file with the command:
+ $ java CircuitTracer -s|-q -c|-g filename
+ 	-s (stack storage) | -q (queue storage) 
+	-c (console output) | -g (gui output) 
+
+ Console output will give the results after the program finishes.
+ 
+ The files must be formatted correctly and requires something akin to the following.
+ 
+ 5 6
+ X O 2 O O O 
+ X X X O O O 
+ O O O O X O 
+ O 1 O O X O 
+ O X O O O O 
+ 
+ where the first two integers represent the number of rows and columns respectively. From there, '1' represents the starting point, and '2' represents where you want the circuit to end.
+ The 'O's are open points, and the 'X's are paths that cannot be crossed.
+
+PROGRAM DESIGN AND IMPORTANT CONCEPTS:
+
+ This program has two important classes that are necessary. The first, 'CircuitBoard.java' has checks and functions to ensure that the file given to the program is formatted correctly and that different aspects of the circuit
+ can be checked. The second is 'CircuitTracer.java' which is the main class, and actually finds and traces the paths in 'CircuitBoard.java' The program uses a stack and a queue, so if you are looking for different breadth
+ or depth results, you can get it that way. All errors are thrown in the program so try/catch blocks may be necessary in a program interfacing with these ones. Once the shortest path is found, it outputs it to the console. 
+
+TESTING:
+
+ To ensure that 'CircuitBoard.java' and 'CircuitTracer.java' work the program 'CircuitTracersTester.java' was used. This program was given to us as a way to test all valid and invalid files, and more quickly develop a 
+ working program. The pseudo code was given to use, as a video that outlined some of the broader concepts, so implementation was still difficult, but with the logic and concepts outlined not impossible.
+
+
+DISCUSSION:
+ 
+ As mentioned above the pseudo code and outlined of the concepts in this program were given to us, so no huge hurdles were encountered in it's development. Instead most of my struggles came from understanding the differences
+ between stacks and queues and how that impacted how the program ran. Interfacing with the 'Storage.java' and 'TraceState.java' programs we were given also posed some challenge because I hadn't wrote those and I had to 
+ figure out how those programs worked, and how to interface with them. 
+ 
+ I was also hard pressed to figure out a way where I could write 'CircuitBoard.java' in such a way that it was easy to understand what the errors were being encountered while checking the validity of the file provided. In a 
+ similar program I had wrote separate methods that returned boolean statements if something was correct or incorrect. I opted to not do that in this program because it meant I would be checking similar errors multiple
+ times and it'd be redundant. Instead I wrote a few if/or statements which would throw errors in the for loops used to parse the character array.
+ 
+ANALYSIS
+
+ - How does the choice of Storage configuration (stack vs queue) affect the sequence in which paths are explored in the search algorithm?
+	When the storage configuration is set as a stack, a single path at a time is explored, until it has either unable to move forward or it finds the solution. If it has correctly found the solution, it will back trace
+	itself and alert each node in the line the path has been found. Otherwise, it will back trace itself until there is a node that can continue forward in a different direction again, and it will follow that to it's 
+	conclusion repeating itself or ending if the solution has been found. 
+	
+	With storage configuration set as a queue, each possible step is taken at once, so no individual path is longer then another. Instead all paths are explored at each iteration of the program, until the ending has 
+	been found.
+	
+ - Is the total number of search states (possible paths) affected by the choice of stack or queue?
+ 	In the program written the total number of search states and possible paths is not affected by the choice of stack or queue. This is not fundamental to the program though because with slight iterations 
+ 	it could be  modified with an if statement to exit as soon as the shortest path is found. As it exists now though, all paths are checked and compared, regardless if the shortest one has been found already.re
+ 
+ - Is using one of the storage structures likely to find a solution in fewer steps than the other? Always?
+ 	For larger grids, the stack will generally find the solution in fewer steps because it checks completed paths. The queue checking all possible paths generally means it will find them slower. When
+	working with smaller grids, a queue will find the path at comparable times to the stack. Also nothing is always true because of random variability in path ending locations and times.
+ 
+ - Does using either of the storage structures guarantee that the first solution found will be a shortest path?
+ 	The queue will generally find the path much faster because as it progresses each branch simultaneously, as soon as it finds the end of the circuit, it has the shortest distance, so it. The stack, because it tries 
+ 	multiple paths, is unlikely to find the shortest path, on the first go.
+ 
+ - How is memory use affected by the choice of underlying structure?
+ 	A queue adds paths of a specific length and only uses more storage when it finds either a path length increase, or the solution. The storage of possible solutions increases exponentially making it the more
+ 	memory intensive structure. The stack however only keeps track of completed paths and that requires a lot less storage because it only uses more memory when storing a new path, instead of remember all possible 
+ 	solutions to that point, like a queue does.
+ 
+ - What is the Big-Oh runtime order for the search algorithm? Does it reflect the maximum size of Storage? Does it reflect the number of board positions? 
+   Does it reflect the number of paths explored? Does it reflect the maximum path length? Is it something else? What is 'n'? What is the primary input factor that increases the difficulty of the task?
+ 	It seems the runtime is O(n^2) because the number of adjacent points increases for each adjacent point in the grid. This is an exponential growth, and with each additional number point causing additional points to have
+ 	to be explored.
+
+
+
+
+
+
+
+

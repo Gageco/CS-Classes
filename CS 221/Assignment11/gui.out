@@ -1,0 +1,6 @@
+Invalid arguments. Usage: 
+$java CircuitTracer -s|-q -c|-g filename 
+-s (stack storage) | -q (queue storage) 
+-c (console output) | -g (gui output) 
+filename (location of file) 
+Note: GUI not available
